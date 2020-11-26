@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+  </head>
+  <body>
+    
+    <div class="container h-100">
+
+        <div id="successAlert" class="alert alert-success" role="alert" style="display: none;">
+            This is a success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+          </div>
+
+          <div id="failAlert" class="alert alert-danger" role="alert" style="display: none;">
+            This is a danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+          </div>
+
+        <div class="row row-cols-1 align-items-center h-100">
+
+          <div class="col-12 row justify-content-center">
+            <div class="col col-10 col-lg-6 col-md-8 ">
+                <button id="addStudentToggle" type="button" class="btn btn-primary btn-block mt-3 mb-3 ">Add Student</button>
+
+
+                <form id="addStudentForm" class="d-none">
+                    <div class="form-group row">
+                      
+                      <div class="col-12">
+                        <input id="name" name="name" placeholder="Student Name" type="text" class="form-control" required="required">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      
+                      <div class="col-12">
+                        <input id="age" name="age" placeholder="Age" type="number" class="form-control" required="required">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      
+                      <div class="col-12">
+                        <input id="batch" name="batch" placeholder="Batch" type="number" class="form-control" required="required">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      
+                      <div class="col-12">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fa fa-address-book"></i>
+                            </div>
+                          </div> 
+                          <input id="contact" name="contact" placeholder="Contact" type="number" class="form-control" required="required">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      
+                      <div class="col-12">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fa fa-at"></i>
+                            </div>
+                          </div> 
+                          <input id="email" name="email" placeholder="E-Mail" type="email" class="form-control" required="required">
+                        </div>
+                      </div>
+                    </div> 
+                    <div class="form-group row justify-content-center">
+                      <div class="col col-10 ">
+                        <button name="submit" type="submit" class="btn btn-primary btn-block">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+
+
+            </div>
+          
+          
+            <div class="col col-10 col-lg-6 col-md-8  ">
+                <button type="button" id="addMentorToggle" class="btn btn-primary btn-block mt-3 mb-3  ">Add Mentor</button>
+
+
+                <form id="addMentorForm" class="d-none">
+                    <div class="form-group row">
+                      
+                      <div class="col-12">
+                        <input id="name" name="name" placeholder="Mentor Name" type="text" class="form-control" required="required">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      
+                      <div class="col-12">
+                        <input id="age" name="age" placeholder="Age" type="number" class="form-control" required="required">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      
+                      <div class="col-12">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fa fa-address-book"></i>
+                            </div>
+                          </div> 
+                          <input id="contact" name="contact" placeholder="Contact" type="number" class="form-control" required="required">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      
+                      <div class="col-12">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fa fa-at"></i>
+                            </div>
+                          </div> 
+                          <input id="email" name="email" placeholder="E-Mail" type="email" class="form-control" required="required">
+                        </div>
+                      </div>
+                    </div> 
+                    <div class="form-group row justify-content-center">
+                      <div class="col col-10">
+                        <button name="submit" type="submit" class="btn btn-primary btn-block">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+                  
+
+            </div>
+          </div>
+          <div class="col-12  row justify-content-center">
+                        <div class="col col-10 col-lg-6 col-md-8 ">
+                <button type="button" id="studentsView" class="btn btn-primary btn-block mt-3 mb-3  ">View/Assign Mentor</button>
+
+
+                <form id="assignMentorForm" class="d-none">
+
+                <div class="row">
+
+                    <div class="w-100">
+                        <div id="studentsContainer" >
+                        <div  class="form-group row  justify-content-center w-100">
+                            <div class="col-6">
+                                <select id="studentsList" name="student_name" class="custom-select">
+                                </select>
+                              </div>
+                          <div class="col-6">
+                            <select id="mentorsList" name="mentor_name" class="custom-select">
+                 
+                            </select>
+                          </div>
+                        </div>
+                        </div> 
+                        <div class="form-group row justify-content-center">
+                          <div class="col col-10">
+                            <button name="submit" id="mentorChangeSubmitButton" type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </div>
+                    </div>
+
+                  </form>
+
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="col col-10 col-lg-6 col-md-8 ">
+                <button type="button" id="mentorView" class="btn btn-primary btn-block mt-3 mb-3  ">View/Assign Students</button>
+
+                <div >
+
+                  <div id="mentorsContainer" class="row d-none">
+
+
+
+
+                </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+  </body>
+</html>
